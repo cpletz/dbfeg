@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DBFEG": {
+      "commandName": "Project",
+      "commandLineArgs": "help"
+    }
+  }
+}

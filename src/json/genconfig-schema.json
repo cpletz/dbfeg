@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://gugus.com/genconfig",
+
+  "type": "object",
+  "properties": {
+    "dbContexts": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-z][A-z|0-9|_]*$": {
+          "type": "object",
+          "properties": {
+            "dbType": {
+              "type": "string",
+              "enum": [ "SqlServer" ]
+            },
+            "connectionString": {
+              "type": "string"
+            }
+          }, 
+          "required": ["dbType", "connectionString"]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    }
+  }
+}

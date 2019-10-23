@@ -1,8 +1,20 @@
-﻿// Learn more about F# at http://fsharp.org
+﻿open CommandLine
 
-open System
+open DbFirstEntityGeneratorLib.InitializeBaseDirectory
+open DbFirstEntityGeneratorLib.CreateDbObjectsSchemas
+open CommandLine.Text
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World from F#!"
-    0 // return an integer exit code 
+    let result = Parser.Default.ParseArguments<InitOptions, CreateDbObjectsSchemaOptions> argv
+
+    //printf "%s" ((HelpText.AutoBuild result).ToString())
+
+    match result with
+    | :? CommandLine.Parsed<obj> as command -> 
+        match command.Value with
+        | :? CreateDbObjectsSchemaOptions -> createDbObjectsSchemas()
+        | :? InitOptions as opts ->  performDirectoryInitialization opts
+        | _ -> 1
+    | :? CommandLine.NotParsed<obj> -> 1
+    | _ -> 1

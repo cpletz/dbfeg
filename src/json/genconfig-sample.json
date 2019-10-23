@@ -1,0 +1,12 @@
+{
+  "dbContexts": {
+    "db1": {
+      "dbType": "SqlServer",
+      "connectionString": "db1 conn-str"
+    },
+    "db2": {
+      "dbType": "SqlServer",
+      "connectionString": "db2 conn-str"
+    }
+  }
+}

@@ -6,7 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="appsettings.json" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser.FSharp" Version="2.6.0" />
+    <PackageReference Include="FSharp.SystemTextJson" Version="0.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DbFirstEntityGeneratorLib\DbFirstEntityGeneratorLib.fsproj" />
   </ItemGroup>
 
 </Project>

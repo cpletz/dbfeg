@@ -1,0 +1,6 @@
+
+dbContexts:
+  db1:
+    connectionString: db1 conn-str
+  db2:
+    connectionString: db2 conn-str
