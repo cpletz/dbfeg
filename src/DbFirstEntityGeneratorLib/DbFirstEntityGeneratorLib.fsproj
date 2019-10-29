@@ -1,14 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="InitializeBaseDirectory.fs" />
+    <Compile Include="Logging.fs" />
     <Compile Include="GeneratorConfiguration.fs" />
     <Compile Include="CreateDbObjectsSchemas.fs" />
+    <Compile Include="InitializeBaseDirectory.fs" />
+    <Compile Include="Main.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser.FSharp" Version="2.6.0" />
     <PackageReference Include="FSharp.SystemTextJson" Version="0.5.1" />
+    <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
   </ItemGroup>
 </Project>

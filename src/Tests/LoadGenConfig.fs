@@ -1,4 +1,4 @@
-module Tests
+module LoadGenConfigTests
 
 open Xunit
 open DbFirstEntityGeneratorLib.GeneratorConfiguration

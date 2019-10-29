@@ -1,1 +1,6 @@
-module Program = let [<EntryPoint>] main _ = 0
+open MainTests
+
+module Program = 
+    let [<EntryPoint>] main _ = 
+        ``Running the generator with the init verb`` ()
+        0
