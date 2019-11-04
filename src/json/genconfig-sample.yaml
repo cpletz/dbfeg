@@ -4,3 +4,5 @@ dbContexts:
     connectionString: db1 conn-str
   db2:
     connectionString: db2 conn-str
+  db3:
+    co

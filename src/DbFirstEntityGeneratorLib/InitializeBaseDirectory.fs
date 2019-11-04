@@ -26,17 +26,16 @@ module InitializeBaseDirectory =
           ""connectionString"": ""your conection string""
         }
       }
-    }"         
+    }"
 
     let performDirectoryInitialization opts =
         printf "Going to initialize directory '%s'" opts.directory
-        let specifiedDir = opts.directory
-        let currentDir = Environment.CurrentDirectory
+        let specifiedDir =
+            if not (String.IsNullOrWhiteSpace opts.directory) then Some(opts.directory)
+            else None
+
         try
-            let directoryToInitialize =
-                if String.IsNullOrWhiteSpace specifiedDir || specifiedDir.Trim() = "." then currentDir
-                else if Path.IsPathFullyQualified specifiedDir then specifiedDir
-                else Path.Combine(currentDir, specifiedDir)
+            let directoryToInitialize = DirectoryResolver.resolve specifiedDir
 
             if not (Directory.Exists directoryToInitialize) then
                 Directory.CreateDirectory directoryToInitialize |> ignore
@@ -47,9 +46,11 @@ module InitializeBaseDirectory =
                 Log.Error(sprintf "The generator config file %s already exists." genConfigPath)
                 1
             else
-                Log.Information(sprintf "Creating an empty generator config file at path %s." genConfigPath )
+                Log.Information(sprintf "Creating an empty generator config file at path %s." genConfigPath)
                 File.WriteAllText(genConfigPath, EmptyGenFonfig)
                 0
-        with e -> 
-            Log.Error("Failed to initialize the directory because of a completely unexpected exception: {exception}", e.Message)
+        with e ->
+            Log.Error
+                ("Failed to initialize the directory because of a completely unexpected exception: {exception}",
+                 e.Message)
             1

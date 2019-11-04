@@ -1,4 +1,6 @@
 {
+  "$schema": "./genconfig.schema.json",
+
   "dbContexts": {
     "db1": {
       "dbType": "SqlServer",

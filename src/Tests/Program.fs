@@ -2,5 +2,5 @@ open MainTests
 
 module Program = 
     let [<EntryPoint>] main _ = 
-        ``Running the generator with the init verb`` ()
+        ``init with impossible path should complain`` ()
         0

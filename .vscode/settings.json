@@ -1,0 +1,6 @@
+{
+    "dotnet-test-explorer.testProjectPath": "C:\\Users\\cpl\\source\\repos\\dbfeg\\src\\Tests",
+    "yaml.schemas": {
+        "./src/json/genconfig.schema.json": "./src/json/genconfig*.yaml"
+    }
+}
