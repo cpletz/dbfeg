@@ -1,15 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Logging.fs" />
     <Compile Include="Utils.fs" />
     <Compile Include="GeneratorConfiguration.fs" />
+    <Compile Include="SqlMetadata.fs" />
     <Compile Include="CreateDbObjectsSchemas.fs" />
     <Compile Include="InitializeBaseDirectory.fs" />
     <Compile Include="Main.fs" />
-    <Compile Include="SqlMetadata.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser.FSharp" Version="2.6.0" />

@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <LangVersion>preview</LangVersion>
-    <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\DbFirstEntityGeneratorLib\DbFirstEntityGeneratorLib.fsproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestUtils.fs" />
     <Compile Include="LoadGenConfig.fs" />
     <Compile Include="MainTests.fs" />
+    <Compile Include="CreateDbObjectsSchemaTests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

@@ -27,12 +27,15 @@ module SqlMetadata =
     type InformationDataContext(options: DbContextOptions<InformationDataContext>) =
         inherit DbContext(options)
 
-        [<DefaultValue>]
-        val mutable questions: DbSet<ColumnInformation>
+        override this.OnModelCreating builder =
+            builder.Entity<ColumnInformation>().HasNoKey() |> ignore
 
-        member x.Questions
-            with get () = x.questions
-            and set v = x.questions <- v
+        [<DefaultValue>]
+        val mutable columns: DbSet<ColumnInformation>
+
+        member x.Columns
+            with get () = x.columns
+            and set v = x.columns <- v
 
 
     let createInformationContext (connStr: string) =
