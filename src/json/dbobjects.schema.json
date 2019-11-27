@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "columnOverrides": {
+            "type": "object",
+            "properties": {
+                "ignore": {
+                    "type": "boolean"
+                },
+                "isNullable": {
+                    "type": "boolean"
+                },
+                "dataType": {
+                    "type": "string"
+                },
+                "propertyName": {
+                    "type": "string",
+                    "pattern": "^[A-z][A-z|0-9|_]*$"
+                }
+            }
+        }
+    },
+    "type": "object",
+    "properties": {
+        "tables": {
+            "type": "object",
+            "properties": {
+                "dbo.Table1": {
+                    "type": "object",
+                    "properties": {
+                        "className": {
+                            "type": "string",
+                            "pattern": "^[A-z][A-z|0-9|_]*$"
+                        },
+                        "columns": {
+                            "type": "object",
+                            "properties": {
+                                "Col1": {
+                                    "$ref": "#/definitions/columnOverrides"
+                                },
+                                "Col2": {
+                                    "$ref": "#/definitions/columnOverrides"
+                                },
+                                "Col3": {
+                                    "$ref": "#/definitions/columnOverrides"
+                                }
+                            }
+                        }
+                    }
+                },
+                "dbo.Table2": {
+                    "type": "object",
+                    "properties": {
+                        "className": {
+                            "type": "string",
+                            "pattern": "^[A-z][A-z|0-9|_]*$"
+                        },
+                        "columns": {
+                            "type": "object",
+                            "properties": {
+                                "ColA": {
+                                    "$ref": "#/definitions/columnOverrides"
+                                },
+                                "ColB": {
+                                    "$ref": "#/definitions/columnOverrides"
+                                },
+                                "ColC": {
+                                    "$ref": "#/definitions/columnOverrides"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

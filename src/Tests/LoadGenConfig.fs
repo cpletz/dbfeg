@@ -8,11 +8,13 @@ let simpleGenFonfig = @"
   ""dbContexts"": {
     ""db1"": {
       ""dbType"": ""SqlServer"",
-      ""connectionString"": ""db1 conn-str""
+      ""connectionString"": ""db1 conn-str"",
+      ""directory"": ""db1""
     },
     ""db2"": {
       ""dbType"": ""SqlServer"",
-      ""connectionString"": ""db2 conn-str""
+      ""connectionString"": ""db2 conn-str"",
+      ""directory"": ""db2""
     }
   }
 }
@@ -32,10 +34,12 @@ let someInvalidJson = @"
   ""dbContexts"": [
     {
       ""name"": ""db1"",
-      ""connectionString"": ""db1 conn-str""
+      ""connectionString"": ""db1 conn-str"",
+      ""directory"": ""db1 conn-str""
     },
     {
       ""name"": ""db2"",
+      ""connectionString"": ""db2 conn-str"",
       ""connectionString"": ""db2 conn-str""
 "
 
@@ -54,11 +58,13 @@ let genFonfigWithInvalidDbContextName= @"
   ""dbContexts"": {
     ""invalid name"": {
       ""dbType"": ""SqlServer"",
-      ""connectionString"": ""db1 conn-str""
+      ""connectionString"": ""db1 conn-str"",
+      ""directory"": ""db1""
     },
     ""db2"": {
       ""dbType"": ""SqlServer"",
-      ""connectionString"": ""db2 conn-str""
+      ""connectionString"": ""db2 conn-str"",
+      ""directory"": ""db2""
     }
   }
 }"

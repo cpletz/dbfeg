@@ -7,17 +7,7 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "DBFEG", "DBFEG\DBFEG.fsproj
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "DbFirstEntityGeneratorLib", "DbFirstEntityGeneratorLib\DbFirstEntityGeneratorLib.fsproj", "{A5E4EF85-5A6F-4C14-ADB2-342AEA038167}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "json", "json", "{0392F473-1600-45D0-8203-656D3391A23D}"
-	ProjectSection(SolutionItems) = preProject
-		json\genconfig-sample.json = json\genconfig-sample.json
-		json\genconfig-sample.yaml = json\genconfig-sample.yaml
-		json\genconfig-schema.json = json\genconfig-schema.json
-	EndProjectSection
-	ProjectSection(FolderGlobals) = preProject
-		C_5_4Users_4cpl_4source_4repos_4dbfeg_4src_4json_4genconfig-sample_1json__JsonSchema = genconfig-schema.json
-	EndProjectSection
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests", "Tests\Tests.fsproj", "{CF6492C6-DDCF-40C4-A910-4C9F6CA66E0D}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Tests", "Tests\Tests.fsproj", "{CF6492C6-DDCF-40C4-A910-4C9F6CA66E0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

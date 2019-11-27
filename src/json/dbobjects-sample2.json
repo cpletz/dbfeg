@@ -1,0 +1,13 @@
+{
+    "$schema": "./dbobjects.gen.schema.json",
+    "tables": {
+        "dbo.Entity": {
+            "typeName": "EntityRow",
+            "columns": {
+                "SourceId": {
+                    
+                }
+            }
+        }
+    }
+}

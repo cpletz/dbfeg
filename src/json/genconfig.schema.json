@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "$id": "https://gugus.com/genconfig",
-
   "type": "object",
   "properties": {
     "dbContexts": {
@@ -12,13 +11,21 @@
           "properties": {
             "dbType": {
               "type": "string",
-              "enum": [ "SqlServer" ]
+              "enum": [
+                "SqlServer"
+              ]
             },
             "connectionString": {
               "type": "string"
+            },
+            "directory": {
+              "type": "string"
             }
-          }, 
-          "required": ["dbType", "connectionString"]
+          },
+          "required": [
+            "dbType",
+            "connectionString"
+          ]
         }
       },
       "additionalProperties": false,

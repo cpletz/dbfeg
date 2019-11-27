@@ -35,7 +35,7 @@ module InitializeBaseDirectory =
             else None
 
         try
-            let directoryToInitialize = DirectoryResolver.resolve specifiedDir
+            let directoryToInitialize = DirectoryResolver.resolve None specifiedDir
 
             if not (Directory.Exists directoryToInitialize) then
                 Directory.CreateDirectory directoryToInitialize |> ignore

@@ -4,6 +4,7 @@ open System.Text.Json
 open System.Text.Json.Serialization
 open System.Collections.Generic
 open System.Text.RegularExpressions
+open System.IO
 
 module GeneratorConfiguration =
 
@@ -12,7 +13,8 @@ module GeneratorConfiguration =
 
     type DbContextConfig =
         { dbType: DbType
-          connectionString: string }
+          connectionString: string
+          directory: string }
 
     type GenConfig =
         { dbContexts: Dictionary<string, DbContextConfig> }
@@ -45,3 +47,12 @@ module GeneratorConfiguration =
             else Error validationResult
 
         with e -> Error [ "Failed to parse the gen-config json document."; e.Message ]
+
+    let createFromDirectory (directory: string option) =
+        let fullPath = DirectoryResolver.resolve None directory 
+        let genconfigPath = Path.Combine(fullPath, "genconfig.json")
+        if not (File.Exists genconfigPath) then
+            Error [sprintf "The gen-config file was not found at the expected path '%s'" genconfigPath]
+        else
+            File.ReadAllText genconfigPath |> createFromJson
+

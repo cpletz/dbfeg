@@ -1,0 +1,18 @@
+{
+    "$schema": "./dbobjects.schema.json",
+     "tables": {
+         "dbo.Table1": {
+             "columns": {
+                 "Col2": { "ignore": true}
+             }
+         },
+         "dbo.Table2": {
+             "className": "Gugus",
+             "columns": {
+                 "ColC": {
+                     "propertyName": "bla"
+                 }
+             }
+         }
+     }
+}
