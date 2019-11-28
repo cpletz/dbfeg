@@ -1,325 +1,324 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "definitions": {
-      "columnOverrides": {
-        "type": "object",
-        "properties": {
-          "isNullable": {
-            "type": "boolean"
-          },
-          "dataType": {
-            "type": "string"
-          },
-          "propertyName": {
-            "type": "string",
-            "pattern": "^[A-z][A-z|0-9|_]*$"
-          }
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "columnOverrides": {
+      "type": "object",
+      "properties": {
+        "isNullable": {
+          "type": "boolean"
+        },
+        "dataType": {
+          "type": "string"
+        },
+        "propertyName": {
+          "type": "string",
+          "pattern": "^[A-z][A-z|0-9|_]*$"
         }
       }
-    },
-    "type": "object",
-    "properties": {
-      "tables": {
-        "type": "object",
-        "properties": {
-          "dbo.SourceIdGenerationRule": {
-            "type": "object",
-            "properties": {
-              "typeName": {
-                "type": "string",
-                "pattern": "^[A-z][A-z|0-9|_]*$"
-              },
-              "columns": {
-                "type": "object",
-                "properties": {
-                  "Id": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "SourceSystem": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "EntityScheme": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "EntityType": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "GenerationDescription": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "IsActive": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "tables": {
+      "type": "object",
+      "properties": {
+        "dbo.SourceIdGenerationRule": {
+          "type": "object",
+          "properties": {
+            "typeName": {
+              "type": "string",
+              "pattern": "^[A-z][A-z|0-9|_]*$"
+            },
+            "columns": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "SourceSystem": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "EntityScheme": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "EntityType": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "GenerationDescription": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "IsActive": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedBy": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedBy": {
+                  "$ref": "#/definitions/columnOverrides"
                 }
               }
             }
-          },
-          "dbo.ENSStatus": {
-            "type": "object",
-            "properties": {
-              "typeName": {
-                "type": "string",
-                "pattern": "^[A-z][A-z|0-9|_]*$"
-              },
-              "columns": {
-                "type": "object",
-                "properties": {
-                  "Code": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Description": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "IsActive": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  }
+          }
+        },
+        "dbo.ENSStatus": {
+          "type": "object",
+          "properties": {
+            "typeName": {
+              "type": "string",
+              "pattern": "^[A-z][A-z|0-9|_]*$"
+            },
+            "columns": {
+              "type": "object",
+              "properties": {
+                "Code": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Description": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "IsActive": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedBy": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedBy": {
+                  "$ref": "#/definitions/columnOverrides"
                 }
               }
             }
-          },
-          "dbo.EntityHist": {
-            "type": "object",
-            "properties": {
-              "typeName": {
-                "type": "string",
-                "pattern": "^[A-z][A-z|0-9|_]*$"
-              },
-              "columns": {
-                "type": "object",
-                "properties": {
-                  "Id": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "SourceSystem": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "SourceId": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "SourceUri": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "EntityScheme": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "EntityType": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Label": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Status": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "StatusComment": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "VersionId": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Action": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  }
+          }
+        },
+        "dbo.EntityHist": {
+          "type": "object",
+          "properties": {
+            "typeName": {
+              "type": "string",
+              "pattern": "^[A-z][A-z|0-9|_]*$"
+            },
+            "columns": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "SourceSystem": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "SourceId": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "SourceUri": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "EntityScheme": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "EntityType": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Label": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Status": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "StatusComment": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "VersionId": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Action": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedBy": {
+                  "$ref": "#/definitions/columnOverrides"
                 }
               }
             }
-          },
-          "dbo.SecurityAccount": {
-            "type": "object",
-            "properties": {
-              "typeName": {
-                "type": "string",
-                "pattern": "^[A-z][A-z|0-9|_]*$"
-              },
-              "columns": {
-                "type": "object",
-                "properties": {
-                  "Id": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "AccountName": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Salt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "PwdHash": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "IsActive": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  }
+          }
+        },
+        "dbo.SecurityAccount": {
+          "type": "object",
+          "properties": {
+            "typeName": {
+              "type": "string",
+              "pattern": "^[A-z][A-z|0-9|_]*$"
+            },
+            "columns": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "AccountName": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Salt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "PwdHash": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "IsActive": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedBy": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedBy": {
+                  "$ref": "#/definitions/columnOverrides"
                 }
               }
             }
-          },
-          "dbo.SourceSystem": {
-            "type": "object",
-            "properties": {
-              "typeName": {
-                "type": "string",
-                "pattern": "^[A-z][A-z|0-9|_]*$"
-              },
-              "columns": {
-                "type": "object",
-                "properties": {
-                  "Code": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Description": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "IsActive": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  }
+          }
+        },
+        "dbo.SourceSystem": {
+          "type": "object",
+          "properties": {
+            "typeName": {
+              "type": "string",
+              "pattern": "^[A-z][A-z|0-9|_]*$"
+            },
+            "columns": {
+              "type": "object",
+              "properties": {
+                "Code": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Description": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "IsActive": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedBy": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedBy": {
+                  "$ref": "#/definitions/columnOverrides"
                 }
               }
             }
-          },
-          "dbo.SecurityPrivilege": {
-            "type": "object",
-            "properties": {
-              "typeName": {
-                "type": "string",
-                "pattern": "^[A-z][A-z|0-9|_]*$"
-              },
-              "columns": {
-                "type": "object",
-                "properties": {
-                  "Id": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "AccountId": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "SourceSystem": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Privilege": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  }
+          }
+        },
+        "dbo.SecurityPrivilege": {
+          "type": "object",
+          "properties": {
+            "typeName": {
+              "type": "string",
+              "pattern": "^[A-z][A-z|0-9|_]*$"
+            },
+            "columns": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "AccountId": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "SourceSystem": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Privilege": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedBy": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedBy": {
+                  "$ref": "#/definitions/columnOverrides"
                 }
               }
             }
-          },
-          "dbo.Entity": {
-            "type": "object",
-            "properties": {
-              "typeName": {
-                "type": "string",
-                "pattern": "^[A-z][A-z|0-9|_]*$"
-              },
-              "columns": {
-                "type": "object",
-                "properties": {
-                  "Id": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "SourceSystem": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "SourceId": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "SourceUri": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "EntityScheme": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "EntityType": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Label": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "Status": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "StatusComment": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "VersionId": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "InsertedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedBy": {
-                    "$ref": "#/definitions/columnOverrides"
-                  },
-                  "UpdatedAt": {
-                    "$ref": "#/definitions/columnOverrides"
-                  }
+          }
+        },
+        "dbo.Entity": {
+          "type": "object",
+          "properties": {
+            "typeName": {
+              "type": "string",
+              "pattern": "^[A-z][A-z|0-9|_]*$"
+            },
+            "columns": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "SourceSystem": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "SourceId": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "SourceUri": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "EntityScheme": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "EntityType": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Label": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "Status": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "StatusComment": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "VersionId": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedBy": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "InsertedAt": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedBy": {
+                  "$ref": "#/definitions/columnOverrides"
+                },
+                "UpdatedAt": {
+                  "$ref": "#/definitions/columnOverrides"
                 }
               }
             }
@@ -328,3 +327,4 @@
       }
     }
   }
+}
